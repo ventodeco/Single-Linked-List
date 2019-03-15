@@ -1,13 +1,14 @@
 #ifndef SINGLELINKLIST_H_INCLUDED
 #define SINGLELINKLIST_H_INCLUDED
 
-#define Nil NULL
-#define first(L) ((L).first)
-#define next(P) (P)->next
-#define info(P) (P)->info
-
 using namespace std;
 #include <iostream>
+
+#define Nil NULL
+#define next(P) (P)->next
+#define info(P) (P)->info
+#define first(L) ((L).first)
+
 
 struct mahasiswa{
 	string nama;
@@ -29,7 +30,8 @@ struct list{
 
 
 void CreateList(list &L);
-address alokasi(infotpe x);
+bool isEmpty(list L);
+address alokasi(infotype x);
 void insertFirst(list &L, address P);
 void insertLast(list &L, address P);
 void insertAfter(list &L, address P);
