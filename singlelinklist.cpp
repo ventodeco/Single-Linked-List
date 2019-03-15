@@ -43,28 +43,44 @@ void insertLast(list &L, address P){
 	}
 }
 
-void insertAfter(list &L, address P){
-	
-}
-
 void deleteFirst(list &L, address &P){
-	
+	if(isEmpty(L)){
+		cout << "List Telah Kosong" << endl;
+	} else{
+		P = first(L);
+		first(L) = next(P);
+		next(P) = NULL;
+	}
 }
 
-void deleteLast(list &L, address &P);
-void deleteAfter(list &L, address &P);
-void sortbyIPK(list &L);
-void sortbyNama(list &L);
+void deleteLast(list &L, address &P){
+	if(isEmpty(L)){
+		cout << "List Telah Kosong" << endl;
+	} else{
+		P = first(L);
+		address Q = NULL;
+		while(next(P) != NULL){
+			Q = P;
+			P = next(P);
+		}
+		next(Q) = NULL;
+	}
+}
+
 void tampilkan(list L){
 	if(isEmpty(L)){
 		cout << "List Telah Kosong" << endl;
 	} else{
 		address P = first(L);
+		int i = 1;
 		while(P != NULL){
+			cout << endl;
+			cout << " Data Mahasiswa ke-" << i << endl;
 			cout << "Nama  : " << info(P).nama << endl;
 			cout << "NIM   : " << info(P).nim << endl;
 			cout << "IPK   : " << info(P).ipk << endl;
 			P = next(P);
+			i = i + 1;
 		}
 	}
 }

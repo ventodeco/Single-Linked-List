@@ -34,12 +34,8 @@ bool isEmpty(list L);
 address alokasi(infotype x);
 void insertFirst(list &L, address P);
 void insertLast(list &L, address P);
-void insertAfter(list &L, address P);
 void deleteFirst(list &L, address &P);
 void deleteLast(list &L, address &P);
-void deleteAfter(list &L, address &P);
-void sortbyIPK(list &L);
-void sortbyNama(list &L);
 void tampilkan(list L);
 
 
